@@ -3,29 +3,42 @@ import React from 'react'
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
 import './style.css'
 
-function TeacherItem() {
+export interface Teacher {
+    
+    id: number;
+    cost: number;
+    name: string;
+    avatar: string;
+    whatsapp: string;
+    subject: string;
+    bio: string;
+
+}
+
+interface TeacherItemProps {
+    teacher: Teacher
+}
+const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
     return (
         <article className="teacher-item">
                     <header>
-                        <img src="https://lh3.googleusercontent.com/ogw/ADGmqu-NnAPbjyLbftAA2SpHEnZuIbP6cYEomGuE8gMf=s32-c-mo" alt="Anderson"/>
+                        <img src={teacher.avatar} alt={teacher.name}/>
                         <div>
-                            <strong>Dersin rei delas</strong>
-                            <span>Bruxaria</span>
+                            <strong>{teacher.name}</strong>
+                            <span>{teacher.subject}</span>
                         </div>
                     </header>
                     <p>
-                        ja lecionei para mestre dos magos ronalbruxo heman sherra o sindico maluco beleza e mamonas assasinas
-                        <br></br>
-                        queria que o layout ficasse semelhante e acabei sem texto
+                        {teacher.bio}
                     </p>
                     <footer>
                         <p>
                             Preço/hora
-                            <strong>R$ 200,00</strong>
+                            <strong>R$ {teacher.cost}</strong>
                         </p>
                         <button type="button">
                             <img src={whatsappIcon} alt="whatsapp"/>
-                            Entrar em contato
+                            Entrar em contato 
                         </button>
                     </footer>
                 </article>
