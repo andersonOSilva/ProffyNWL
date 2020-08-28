@@ -7,7 +7,7 @@ function TeacherItem() {
         <View style={style.container}>
             <View style={style.profile}>
                 <Image style={style.avatar}
-                       source={{uri: 'https://www.facebook.com/photo/?fbid=1462776893869931&set=a.107307022750265&__tn__=%3C'}}>
+                       source={{uri: 'https://avatars1.githubusercontent.com/u/38002829?s=460&u=12cea36c425ed18c2337fbcdcf4028f4ec81cb36&v=4'}}>
 
                 </Image>
                 <View style={style.profileInfo}>
