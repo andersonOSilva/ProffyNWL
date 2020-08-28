@@ -38,7 +38,8 @@ export default class {
                 select(['classes.*','users.*'])
 
 
-
+        console.log(classes);
+        
         return response.json(classes);
         
     }
