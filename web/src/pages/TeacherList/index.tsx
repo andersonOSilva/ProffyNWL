@@ -1,23 +1,28 @@
-import React, { useState, FormEvent } from 'react'
+import React, { useState, FormEvent, useEffect } from 'react'
+
+import './style.css'
+import api from '../../services/api'
+import TeacherItem, {Teacher} from '../../components/TeacherItem'
 
 import { Link } from 'react-router-dom'
 
 
+
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
-import './style.css'
 import PageHeader from '../../components/PageHeader'
-import TeacherItem, {Teacher} from '../../components/TeacherItem'
 import Input from '../../components/Input'
 import Select from '../../components/Select'
-import api from '../../services/api'
+
 
 function TeacherList() {
+    
+
     const [teachers, setTeachers] = useState([])
 
     const [subject,setSubject] = useState()
     const [week_day,setWeek_day] = useState()
     const [time,setTime] = useState()
-    
+
     async function searchTeachers(e:FormEvent){
         e.preventDefault()
         
